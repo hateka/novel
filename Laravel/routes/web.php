@@ -35,7 +35,7 @@ Route::get('post/img', function () {
 });
 
 //tag and text page
-Route::get('post/text', function () {});
+Route::post('post/text', 'PostController@confirm_img');
 
 //post api
 Route::post('post', 'PostController@index');

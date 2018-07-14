@@ -21,10 +21,6 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -46,7 +42,7 @@
             }
 
             .content textarea {
-               width:540px;
+               width: 540px;
             }
 
             .title {
@@ -73,6 +69,11 @@
            h2 {
               text-align: left;
            }
+
+           #img_area {
+              margin-top: 40px;
+           }
+
         </style>
     </head>
     <body>
@@ -80,10 +81,15 @@
 
             <div class="content">
 
-               {!! Form::open(['url' => 'post/text']) !!}
+               {!! Form::open(['url' => 'post']) !!}
   
                  <h2>Paste code</h2>
-                 {!! Form::textarea('img_code') !!}
+                    <div id="img_area">
+
+                      {!! $img !!}
+                    </div>
+
+                 {!! Form::textarea('text') !!}
 
                 <div id="submit_btn">
 
