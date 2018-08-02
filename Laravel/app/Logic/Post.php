@@ -8,19 +8,19 @@ use DB;
 class Post
 {
 
- public function createEntry()
+ public function createEntry($data)
  {
-
-var_dump(uniqid());
-
-   $user_id = 222;
+   $user_id = uniqid();
    $user_data = DB::table('users')->where('user_id', '=' , $user_id)->get();
+
+var_dump($user_id);
+var_dump($user_data);
 
    if (empty(count($user_data))) {
 
       DB::table('users')->insert(
        [
-       'name'=>'test',
+       'name'=> $data['name'],
        'user_id' => $user_id
        ]
       );
@@ -28,14 +28,14 @@ var_dump(uniqid());
       DB::table('text')->insert(
        [
        'user_id' => $user_id,
-       'text' => 'test2!!'
+       'text' => $data['text'] 
        ]
       );
  
       DB::table('img')->insert(
        [
        'user_id' => $user_id,
-       'code' => 'ssssss'
+       'code' =>$data['code'] 
        ]
       );
     }

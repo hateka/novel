@@ -18,15 +18,11 @@ Route::get('/', function () {
 
 Route::get('all', function()
 {
-
     $user_data = DB::table('users')
     ->join('text', 'users.user_id', '=', 'text.user_id')
     ->join('img', 'users.user_id', '=', 'img.user_id')
     ->get(array('name', 'text', 'code'));
-
-
-    return ['user_data'=>$user_data];
-
+    return view('all', ['user_data' => $user_data]);
 });
 
 //img paste page

@@ -14,7 +14,7 @@ class Text extends Migration
     public function up()
     {
         Schema::create('text', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->string('user_id', 100);
             $table->text('text');
             $table->timestamps();
         });

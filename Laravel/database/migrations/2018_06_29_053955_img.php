@@ -14,7 +14,7 @@ class Img extends Migration
     public function up()
     {
         Schema::create('img', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->string('user_id', 100);
             $table->text('code');
             $table->timestamps();
         });

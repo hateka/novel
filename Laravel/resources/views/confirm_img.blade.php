@@ -42,7 +42,7 @@
             }
 
             .content textarea {
-               width: 540px;
+               width: 520px;
             }
 
             .title {
@@ -64,7 +64,7 @@
             }
 
            #submit_btn {
-                margin-top: 20px;
+                margin: 20px 0;
            }
            h2 {
               text-align: left;
@@ -74,6 +74,16 @@
               margin-top: 40px;
            }
 
+           #name,#tag {
+             text-align: left;
+             margin: 15px 0;
+           }
+
+          #data {
+            background-color: #FAFAFA;
+            padding: 10px;
+         }
+
         </style>
     </head>
     <body>
@@ -82,14 +92,29 @@
             <div class="content">
 
                {!! Form::open(['url' => 'post']) !!}
-  
+                 
+                {!! Form::hidden('code', $img) !!}
+ 
                  <h2>Paste code</h2>
                     <div id="img_area">
 
                       {!! $img !!}
                     </div>
 
+                <div id="data">
+
+                 <div id="name"> 
+
+                   {!! Form::text('name') !!}
+                 </div>
                  {!! Form::textarea('text') !!}
+
+                <div id="tag">
+
+                 {!! Form::text('tag') !!}
+                </div>
+
+                </div>
 
                 <div id="submit_btn">
 

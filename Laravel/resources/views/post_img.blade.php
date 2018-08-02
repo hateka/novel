@@ -81,6 +81,8 @@
             <div class="content">
 
                {!! Form::open(['url' => 'post/text']) !!}
+
+                 {{ csrf_field() }}
   
                  <h2>Paste code</h2>
                  {!! Form::textarea('img_code') !!}
